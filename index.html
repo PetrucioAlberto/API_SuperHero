@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Petrucio</title>
+    
+    
+</head>
+<body>
+    <div id="geral">  
+            
+            <h1> SUPER HERO API</h1>
+
+
+            <div id="imagem1">
+                <img id="hero-image" alt="imagem do herói" />
+                <h3 id="hero-name"></h3>
+                <h2 id="hero-caracter">Caracteristicas</h2>
+                <ul id="powerstats-list"></ul>
+                
+            </div>
+
+            <div> 
+                <img id="hero-image2" alt="imagem2 do herói" />  
+                <h3 id="hero-name2"></h3> 
+                <h2 id="hero-caracter2">Caracteristicas</h2>
+                <ul id="powerstats-list2"></ul>
+            </div>
+
+            <button id="random-button">Gerar novo herói</button>
+
+
+
+            <script>
+                
+                function loadHeroData() {
+                    const randomId = Math.floor(Math.random() * 731) + 1; 
+                    const randomId2 = Math.floor(Math.random() * 731) + 1; 
+                    const BASE_URL = `https://superheroapi.com/api.php/6033252263462818/`; 
+
+                    fetch(BASE_URL + randomId)
+                        .then(function(resData){
+                            return resData.json();
+                        })  
+                        .then(function(jsonData){
+                            
+                            const heroImage = document.getElementById('hero-image');
+                            heroImage.src = jsonData.image.url;
+
+                            
+                            const heroName = document.getElementById('hero-name');
+                            heroName.textContent = jsonData.name;
+
+                            const powerstatsList = document.getElementById('powerstats-list');
+                            powerstatsList.innerHTML = '';
+                            for (const [key, value] of Object.entries(jsonData.powerstats)) {
+                                const li = document.createElement('li');
+                                li.textContent = `${key}: ${value}`;
+                                powerstatsList.appendChild(li);
+                            }
+                        });
+
+
+                        fetch(BASE_URL + randomId2)
+                
+                        .then(function(resData){
+                            return resData.json();
+                        })
+
+                        .then(function(jsonData){
+                            
+                            const heroImage2 = document.getElementById('hero-image2');
+                            heroImage2.src = jsonData.image.url;
+
+                            
+                            const heroName2 = document.getElementById('hero-name2');
+                            heroName2.textContent = jsonData.name;
+
+                            const powerstatsList2 = document.getElementById('powerstats-list2');
+                            powerstatsList2.innerHTML = '';
+                            for (const [key, value] of Object.entries(jsonData.powerstats)) {
+                                const li = document.createElement('li');
+                                li.textContent = `${key}: ${value}`;
+                                powerstatsList2.appendChild(li);
+                            }
+                        });
+
+
+
+
+                }
+
+        
+                loadHeroData(); 
+
+            
+                const randomButton = document.getElementById('random-button');
+                randomButton.addEventListener('click', function() {
+                    loadHeroData();
+                });
+            </script>
+        </div>
+    </body>
+
+</html>

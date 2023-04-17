@@ -1,0 +1,94 @@
+
+body{
+    background: rgba(158, 233, 105, 0.408);
+  
+    
+    
+       
+}
+
+
+
+
+h1{
+    margin-left: 28%;
+}
+
+h3{
+    float:right;
+    margin-right:990px ;
+}
+
+h2{
+    float:right;
+    margin-right:950px ;
+    margin-top: -25%;
+}
+
+#powerstats-list{  
+    margin-left: 29%;
+    margin-top: -22%;
+}
+
+#random-button{
+    margin-left: 30%;
+    background-color: #4CAF50; /* cor de fundo */
+    border: none; /* sem borda */
+    color: white; /* cor do texto */
+    padding: 15px 32px; /* espaço interno */
+    text-align: center; /* centralizar texto */
+    text-decoration: none; /* sem sublinhado */
+    display: inline-block; /* exibir como um bloco */
+    font-size: 16px; /* tamanho da fonte */
+    cursor: pointer; /* cursor ao passar o mouse */
+    border-radius: 8px; /* borda arredondada */
+    margin-top: 100px;
+   
+  }
+    
+
+
+#hero-image{
+   width:300px ;
+   height:500px ;
+   margin-left: 7%;
+  
+    
+}
+
+
+#hero-image2{
+    width:300px ;
+    height:500px ;
+    margin-top: -283px;
+    margin-left: 720px;
+     
+ }
+
+
+ #hero-name2{
+    margin-right: 420px;
+    margin-top: -490px;
+ }
+
+ #hero-caracter2{
+    margin-right: 390px;
+   
+ }
+
+ #powerstats-list2{
+    float: right;
+    margin-right: 420px;
+    margin-top: -350px;
+
+ }
+
+ 
+
+
+
+
+
+
+
+
